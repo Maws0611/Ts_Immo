@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProprieteController;
+use App\Http\Controllers\ProprietaireController;
+use App\Http\Controllers\AgenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('proprietes', ProprieteController::class);
+Route::resource('proprietaires', ProprietaireController::class);
+Route::resource('agences', AgenceController::class);
 
 Route::get('/', function () {
     return view('welcome');

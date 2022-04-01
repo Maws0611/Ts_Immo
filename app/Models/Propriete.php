@@ -12,7 +12,7 @@ use App\Models\Villa;
 class Propriete extends Model
 {
     use HasFactory;
-
+    protected $guarded =['id'];
     public function quartier(){
         return $this->belongsTo(Quartier::class);
     }
