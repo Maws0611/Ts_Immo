@@ -13,69 +13,63 @@ class ProprietaireController extends Controller
         return view('proprietaire.index', compact('proprietaires'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('proprietaire.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'CNI' => 'required',
+            'prenom' => 'required',
+            'nom' => 'required',
+            'telephone' => 'required',
+            'sexe' => 'required',
+            'adress' => 'required',
+        ]);
+
+        $proprietaire = new Proprietaire();
+        $proprietaire->CNI = $request->CNI;
+        $proprietaire->prenom = $request->prenom;
+        $proprietaire->nom = $request->nom;
+        $proprietaire->telephone = $request->telephone;
+        $proprietaire->sexe = $request->sexe;
+        $proprietaire->adress = $request->adress;
+        $proprietaire->save();
+        return redirect('/proprietaires');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $proprietaire = Proprietaire::findOrFail($id);
+        return view('proprietaire.edit', compact('proprietaire'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $validation = $request->validate([
+            'CNI' => 'required',
+            'prenom' => 'required',
+            'nom' => 'required',
+            'telephone' => 'required',
+            'sexe' => 'required',
+            'adress' => 'required',
+        ]);
+        Proprietaire::whereId($id)->update($validation);
+
+        return redirect('/proprietaires')->with('Vous avez bien modifier');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $proprietaire = Proprietaire::findOrFail($id);
+        $proprietaire ->delete();
+        return redirect('/proprietaires')->with('La suppréssion est cool');
     }
 }

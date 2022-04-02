@@ -51,7 +51,7 @@ class ProprieteController extends Controller
         //
     }
 
-    public function edit($id, Request $request=null)
+    public function edit($id)
     {
         $propriete = Propriete::findOrFail($id);
         $proprietaires = Proprietaire::all();

@@ -23,11 +23,27 @@
           <label for="CNI" class="form-label">CNI</label>
           <input type="text" class="form-control" name="CNI">
         </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Prénom</label>
+          <input type="text" class="form-control" name="prenom">
+        </div>
+        <div class="mb-3">
+          <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" name="nom">
+        </div>
+        <div class="mb-3">
+          <label for="telephone" class="form-label">Téléphone</label>
+          <input type="number" class="form-control" name="telephone">
+        </div>
         <select class="form-select" aria-label="Default select example" name="sexe">
           <option selected>Sexe</option>
           <option value="F">Femme</option>
           <option value="M">Masculin</option>
         </select><br>
+        <div class="mb-3">
+          <label for="adress" class="form-label">Adress</label>
+          <input type="text" class="form-control" name="adress">
+        </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>
       </form>
   </div>
