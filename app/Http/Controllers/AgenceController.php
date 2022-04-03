@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Agence;
+use App\Models\Propriete;
 
 class AgenceController extends Controller
 {
@@ -13,69 +14,58 @@ class AgenceController extends Controller
         return view('agence.index', compact('agences'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $proprietes = Propriete::all();
+        return view('agence.create', compact('proprietes'));
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'nom' => 'required',
+            'adresse' => 'required',
+            'propriete_id' => 'required'
+        ]);
+
+        $agence = new Agence();
+        $agence->nom = $request->nom;
+        $agence->adresse = $request->adresse;
+        $agence->propriete_id = $request->propriete_id;
+        $agence->save();
+        return redirect('/agences');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $agence = Agence::findOrFail($id);
+        $proprietes = Propriete::all();
+        return view('agence.edit', compact('agence', 'proprietes'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $validation = $request->validate([
+            'nom' => 'required',
+            'adresse' => 'required',
+            'propriete_id' => 'required'
+        ]);
+        Agence::whereId($id)->update($validation);
+
+        return redirect('/agences');
+    
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $agence = Agence::findOrFail($id);
+        $agence ->delete();
+        return redirect('/agences');
     }
 }
