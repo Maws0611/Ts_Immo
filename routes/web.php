@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('proprietes', ProprieteController::class);
-// Route::resource('proprietaires', ProprietaireController::class);
+Route::resource('proprietaires', ProprietaireController::class);
 Route::resource('agences', AgenceController::class);
 
 Route::get('/', function () {
@@ -32,12 +32,12 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 // user protected routes
-Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function () {
-    Route::resource('proprietaires', ProprietaireController::class)->only([
-        'index', 'update'
-    ]);
-});
-// admin protected routes
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-    Route::resource('proprietaires', ProprietaireController::class);
-});
+// Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function () {
+//     Route::resource('proprietaires', ProprietaireController::class)->only([
+//         'index', 'update'
+//     ]);
+// });
+// // admin protected routes
+// Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+//     Route::resource('proprietaires', ProprietaireController::class);
+// });
