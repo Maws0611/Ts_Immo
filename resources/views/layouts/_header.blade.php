@@ -8,10 +8,22 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('proprietes.create') }}">Ajouter entreprise</a>
+                <a class="nav-link" href="{{ route('proprietes.create') }}">Ajouter un propriété</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('proprietes.index') }}">Entreprise</a>
+                <a class="nav-link" href="{{ route('proprietes.index') }}">Propriétes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('proprietaires.create') }}">Ajouter un Propriétaire</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('proprietaires.index') }}">Propriétaires</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('agences.create') }}">Ajouter un Agence</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('agences.index') }}">Agences</a>
               </li>
             </ul>
           </div>

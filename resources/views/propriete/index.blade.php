@@ -19,12 +19,13 @@
                     <td>{{$propriete->surface}}</td>
                     <td>{{$propriete->description}}</td>
                     <td>{{$propriete->proprietaire_id}}</td>
-                    <td><a href="{{ route('proprietes.edit', $propriete->id)}}" class="btn btn-primary">Modifier</a></td>
+                    <td><a href="{{ route('proprietes.edit', $propriete->id)}}" class="btn"><img src="{{ asset('img/edit.png')}}" width="30" height="30" alt="edit"></a></td>
                     <td>
                         <form action="{{ route('proprietes.destroy', $propriete->id)}}" method="post">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-danger" type="submit">Supprimer</button>
+                          <button class="btn" type="submit"><img src="{{ asset('img/Delete.png')}}" width="30" height="30" alt="Delete"></button>
+                          
                         </form>
                     </td>
                 </tr>

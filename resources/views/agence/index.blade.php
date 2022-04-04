@@ -20,12 +20,12 @@
                     <td>{{$agence->adresse}}</td>
                     <td>{{$agence->propriete_id}}</td>
 
-                    <td><a href="{{ route('agences.edit', $agence->id)}}" class="btn btn-primary">Modifier</a></td>
+                    <td><a href="{{ route('agences.edit', $agence->id)}}" class="btn"><img src="{{ asset('img/edit.png')}}" width="30" height="30" alt="edit"></a></td>
                     <td>
                         <form action="{{ route('agences.destroy', $agence->id)}}" method="post">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-danger" type="submit">Supprimer</button>
+                          <button class="btn" type="submit"><img src="{{ asset('img/Delete.png')}}" width="30" height="30" alt="Delete"></button>
                         </form>
                     </td>
                 </tr>

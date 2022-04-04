@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-12 pt-5">
+<div class="container py-12 pt-5 ">
   <div class="card uper">
     <div class="card-header">
       <h1 class="text-center">Ajouter un Propriétaire</h1>
