@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('HeaderFooter.app')
 
 @section('content')
 <div class="container py-12 pt-5">
@@ -37,3 +37,4 @@
       </form>
   </div>
 </div>
+@endsection

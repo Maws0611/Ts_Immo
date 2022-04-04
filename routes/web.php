@@ -19,6 +19,10 @@ Route::resource('proprietes', ProprieteController::class);
 Route::resource('proprietaires', ProprietaireController::class);
 Route::resource('agences', AgenceController::class);
 
+Route::resource('proprietes', ProprieteController::class);
+Route::resource('proprietaires', ProprietaireController::class);
+Route::resource('agences', AgenceController::class);
+
 Route::get('/', function () {
     return view('welcome');
     // $user = App\Models\User::first();
