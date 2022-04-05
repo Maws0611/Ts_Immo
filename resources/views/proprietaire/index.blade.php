@@ -1,7 +1,10 @@
-@extends('HeaderFooter.app')
 
+    @extends('HeaderFooter.app')
+
+    
 @section('content')
-<div class="container ">
+
+<div class="container pt-5">
     <h1 class="text-center py-5">La liste des proprietaires</h1>
         <table class="table table-striped">
             <head>
