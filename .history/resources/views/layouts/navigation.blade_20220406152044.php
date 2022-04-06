@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('img/tsimmo.png')}}" style="pointer-events: none" width="50" height="50">
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
@@ -22,6 +22,7 @@
                                 {{ __('my profile') }}
                             </x-nav-link>
                         </div>
+                    
                 @endif
             </div>
 

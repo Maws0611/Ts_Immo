@@ -1,11 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <img src="{{ asset('img/tsimmo.png')}}" style="pointer-events: none">
-            </a>
 
-            
+            <img src="{{ asset('img/tsimmo.png')}}" style="pointer-events: none">
         </x-slot>
 
         <!-- Validation Errors -->

@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('img/tsimmo.png')}}" style="pointer-events: none" width="50" height="50">
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
@@ -16,13 +16,14 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                @if (Auth::user()->hasRole('admin'))
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard')">
-                                {{ __('my profile') }}
-                            </x-nav-link>
-                        </div>
-                @endif
+               @if (Auth::user()->hasRole('proprietaire'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard')">
+                        {{ __('my profile') }}
+                    </x-nav-link>
+                </div>
+                   
+               @endif
             </div>
 
             <!-- Settings Dropdown -->
@@ -48,7 +49,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Se déconnecter') }}
+                                {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proprietaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,15 +11,17 @@ class DashbordController extends Controller
     
     public function index()
     {
+        $proprietaires = Proprietaire::all();
         if(Auth::user()->hasRole('proprietaire')) {
             
-            return view('dashboard.proprietaire');
+            return view('dashboard.proprietaire', compact('proprietaires'));
            
         } elseif (Auth::user()->hasRole('admin')) {
                 return view('dashboard.admin');
 
         }elseif (Auth::user()->hasRole('superadmin')) {
             return view('dashboard.superadmin');
+
         }
     }
 

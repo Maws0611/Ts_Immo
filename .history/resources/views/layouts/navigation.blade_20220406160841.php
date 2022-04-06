@@ -22,6 +22,7 @@
                                 {{ __('my profile') }}
                             </x-nav-link>
                         </div>
+                    
                 @endif
             </div>
 

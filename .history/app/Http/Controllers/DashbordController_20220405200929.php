@@ -19,6 +19,7 @@ class DashbordController extends Controller
 
         }elseif (Auth::user()->hasRole('superadmin')) {
             return view('dashboard.superadmin');
+
         }
     }
 

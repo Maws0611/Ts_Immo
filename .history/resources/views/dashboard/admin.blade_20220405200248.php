@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     Vous etes connecté en tant que administeur
 
-                    {{-- @include('proprietaire.index') --}}
+                    
                 </div>
             </div>
         </div>
