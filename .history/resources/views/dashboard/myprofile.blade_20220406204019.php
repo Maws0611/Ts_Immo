@@ -2,11 +2,11 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('myprofile') }}
-            <span class="text-center" style="float: right; font-size: 14px" >
+            <span class="text-center" >
                 {{ Auth::user()->email }}
             </span> 
         </h2>
-    </x-slot>
+    </x-slot><style></style>
     {{-- <div class="text-center mx-auto">
 
     </div> --}}

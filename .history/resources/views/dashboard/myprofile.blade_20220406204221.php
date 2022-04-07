@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('myprofile') }}
             <span class="text-center" style="float: right; font-size: 14px" >
-                {{ Auth::user()->email }}
+                {{ Auth::user()->prenom }}
             </span> 
         </h2>
     </x-slot>

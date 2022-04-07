@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Tableau de bord') }}
+                        {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 @if (Auth::user()->hasRole('admin'))
@@ -38,13 +38,13 @@
                                 </svg>
                             </div>
                         </button>
-                        <div>{{ Auth::user()->role }}</div>
                     </x-slot>
                     
                     <x-slot name="content">
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                            <div>{{ Auth::user()->role }}</div>
                             
                             <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();

@@ -1,20 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('myprofile') }}
-            <span class="text-center" style="float: right; font-size: 14px" >
-                {{ Auth::user()->email }}
-            </span> 
+            {{ __(Auth::user()->name) }}
         </h2>
     </x-slot>
-    {{-- <div class="text-center mx-auto">
-
-    </div> --}}
-    {{-- <x-slot name="header">
+    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             
         </h2>
-    </x-slot> --}}
+    </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
