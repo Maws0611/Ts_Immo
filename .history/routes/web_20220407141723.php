@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth']], function(){
 
  // auth for users
  Route::group(['middleware' => ['auth', 'role:proprietaire|admin']], function(){
-    Route::get('/dashboard/profile', 'App\Http\Controllers\DashbordController@myprofile');
+    Route::get('/dashboard/profile', 'App\Http\Controllers\DashbordController@myprofile'),
     Route::resource('proprietes', ProprieteController::class)
     ->name('dashboard.myprofile');
 });
